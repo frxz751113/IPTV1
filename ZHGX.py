@@ -20,13 +20,13 @@ import fileinput
 #"isShowLoginJs"智能KUTV管理
 
 urls = [
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJoZWJlaSI%3D",#c河北
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODg4OCI%3D",#8888​
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODA5MCI%3D",#8090​
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODgi",#88​
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODgi",#809​
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0iVGFpJ2FuIg%3D%3D",#泰安
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0iSGFyYmluIg%3D%3D",#哈尔滨
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJoZWJlaSI%3D",#河北
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgIHJlZ2lvbj0iR1VBTkdYSSBaSFVBTkdaVSI%3D",#广西
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgICYmIHRpdGxlPT0iSVBUVue7vOWQiOeuoeeQhuezu%2Be7nyI%3D",#IPTV综合
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJTaGFhbnhpIg%3D%3D",#陕西
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJodWJlaSI%3D",#湖北
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJIdW5hbiI%3D",#湖南
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJndWFuZ2Rvbmci",#广东
 ]
 def modify_urls(url):
     modified_urls = []
@@ -369,7 +369,7 @@ result_counter = 88  # 每个频道需要的个数
 
 with open("hn.txt", 'w', encoding='utf-8') as file:
     channel_counters = {}
-    file.write('央视频道1,#genre#\n')
+    file.write('央视频道,#genre#\n')
     for result in results:
         channel_name, channel_url, speed = result
         if 'CCTV' in channel_name or '动作' in channel_name or '家庭' in channel_name or '影迷' in channel_name:
@@ -385,7 +385,7 @@ with open("hn.txt", 'w', encoding='utf-8') as file:
                 channel_counters[channel_name] = 1
 
     channel_counters = {}
-    file.write('卫视频道1,#genre#\n')
+    file.write('卫视频道,#genre#\n')
     for result in results:
         channel_name, channel_url, speed = result
         if '卫视' in channel_name:
@@ -403,7 +403,7 @@ with open("hn.txt", 'w', encoding='utf-8') as file:
     file.write('省市频道,#genre#\n')
     for result in results:
         channel_name, channel_url, speed = result
-        if '湖北' in channel_name or '武汉' in channel_name  or '黑龙江' in channel_name or '湖南' in channel_name or '南宁' in channel_name or '河北' in channel_name or '广东' in channel_name or '广西' in channel_name or '石家庄' in channel_name:
+        if '湖北' in channel_name or '武汉' in channel_name  or '黑龙江' in channel_name or '湖南' in channel_name or '陕西' in channel_name or '南宁' in channel_name or '河北' in channel_name or '广东' in channel_name or '广西' in channel_name or '石家庄' in channel_name:
           if 'CCTV' not in channel_name and '卫视' not in channel_name and '购物' not in channel_name:  
             if channel_name in channel_counters:
                 if channel_counters[channel_name] >= result_counter:
@@ -420,7 +420,7 @@ with open("hn.txt", 'w', encoding='utf-8') as file:
 
 
     channel_counters = {}
-    file.write('港澳频道1,#genre#\n')
+    file.write('港澳频道,#genre#\n')
     for result in results:
         channel_name, channel_url, speed = result
         if '龙祥' in channel_name or '翡翠' in channel_name or '酒店' in channel_name or 'AXN' in channel_name or '东森' in channel_name or '莲花' in channel_name or '天映' in channel_name or '好莱坞' in channel_name or '星河' in channel_name or '私人' in channel_name or '哔哩' in channel_name or '凤凰' in channel_name:
