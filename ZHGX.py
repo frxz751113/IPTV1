@@ -11,30 +11,7 @@ from datetime import datetime
 import replace
 import fileinput
 
-#  获取远程港澳台直播源文件
-url = "https://raw.gitcode.com/frxz751113/1/raw/main/IPTV/ott移动v4.txt"          #源采集地址
-r = requests.get(url)
-open('ott移动v4.txt','wb').write(r.content)         #打开源文件并临时写入
 
-keywords = [',']  # 需要提取的关键字列表 8M1080
-pattern = '|'.join(keywords)  # 创建正则表达式模式，匹配任意一个关键字
-#pattern = r"^(.*?),(?!#genre#)(.*?)$" #以分类直接复制
-with open('ott移动v4.txt', 'r', encoding='utf-8') as file, open('TW.txt', 'w', encoding='utf-8') as TW:
-    #TW.write('\n央视频道,#genre#\n')
-    for line in file:
-        if re.search(pattern, line):  # 如果行中有任意关键字
-          TW.write(line)  # 将该行写入输出文件
-
-# 读取要合并的香港频道和台湾频道文件
-file_contents = []
-file_paths = ["TW.txt"]  # 替换为实际的文件路径列表
-for file_path in file_paths:
-    with open(file_path, 'r', encoding="utf-8") as file:
-        content = file.read()
-        file_contents.append(content)
-# 生成合并后的文件
-with open("GAT.txt", "w", encoding="utf-8") as output:
-    output.write('\n'.join(file_contents))
 
 
 # 扫源测绘空间地址
@@ -43,8 +20,13 @@ with open("GAT.txt", "w", encoding="utf-8") as output:
 #"isShowLoginJs"智能KUTV管理
 
 urls = [
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJoZWJlaSI%3D" ,   # 河北
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgIHJlZ2lvbj0iR1VBTkdYSSBaSFVBTkdaVSI%3D" , #广西
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJoZWJlaSI%3D",#c河北
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODg4OCI%3D",#8888​
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODA5MCI%3D",#8090​
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODgi",#88​
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODgi",#809​
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0iVGFpJ2FuIg%3D%3D",#泰安
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0iSGFyYmluIg%3D%3D",#哈尔滨
 ]
 def modify_urls(url):
     modified_urls = []
@@ -497,7 +479,7 @@ with open("hn.txt", 'w', encoding='utf-8') as file:
       
 # 合并自定义频道文件内容
 file_contents = []
-file_paths = ["GAT.txt", "hn.txt"]  # 替换为实际的文件路径列表
+file_paths = ["hn.txt"]  # 替换为实际的文件路径列表
 for file_path in file_paths:
     with open(file_path, 'r', encoding="utf-8") as file:
         content = file.read()
@@ -529,9 +511,5 @@ with open('酒店源.txt', 'w', encoding="utf-8") as file:
 
 
 os.remove("iptv.txt")
-os.remove("GAT.txt")
 os.remove("hn.txt")
-#os.remove("HK.txt")
-os.remove("TW.txt")
-os.remove("ott移动v4.txt")
 print("任务运行完毕")
