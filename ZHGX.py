@@ -9,6 +9,12 @@ import re
 urls = [
     "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJoZWJlaSI%3D",  # c河北
     "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODg4OCI%3D",#8888
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODA5MCI%3D",#8090
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODgi",#88
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODgi",#809
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0iVGFpJ2FuIg%3D%3D",#泰安
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0iSGFyYmluIg%3D%3D",#哈尔滨
+    
 ]
 
 def modify_urls(url):
