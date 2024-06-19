@@ -20,13 +20,12 @@ import fileinput
 #"isShowLoginJs"智能KUTV管理
 
 urls = [
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJoZWJlaSI%3D",#河北
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgIHJlZ2lvbj0iR1VBTkdYSSBaSFVBTkdaVSI%3D",#广西
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgICYmIHRpdGxlPT0iSVBUVue7vOWQiOeuoeeQhuezu%2Be7nyI%3D",#IPTV综合
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJTaGFhbnhpIg%3D%3D",#陕西
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJodWJlaSI%3D",#湖北
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJIdW5hbiI%3D",#湖南
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJndWFuZ2Rvbmci",#广东
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODA4Ig%3D%3D",#808
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODAwOCI%3D",#8008
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODA4MSI%3D",#IPTV综合
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJTaGFhbnhpIg%3D%3D",#8081
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODg4OCI%3D",#8888
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iOTk5OSI%3D",#9999
 ]
 def modify_urls(url):
     modified_urls = []
