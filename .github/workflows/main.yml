@@ -2,9 +2,9 @@ name: itvlist
 
 on:
   schedule:
-    - cron: '0 21 * * *'
-  push:
-    branches:
+    - cron: '1 */12 * * *'        #这里更改自动运行的时间，没这两行的话只能手动运行
+  workflow_dispatch:
+    分支:
       - main
 
 jobs:
