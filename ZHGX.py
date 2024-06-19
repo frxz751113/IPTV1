@@ -246,6 +246,12 @@ for result in results:
         channel_name, channel_url = result.split(',')
         channels.append((channel_name, channel_url))
 
+with open("iptv.txt", 'w', encoding='utf-8') as file:
+    for result in results:
+        file.write(result + "\n")
+        print(result)
+print("频道列表文件iptv.txt获取完成！")
+
 import eventlet
 eventlet.monkey_patch()
 
