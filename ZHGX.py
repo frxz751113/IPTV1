@@ -252,6 +252,9 @@ with open("iptv.txt", 'w', encoding='utf-8') as file:
         print(result)
 print("频道列表文件iptv.txt获取完成！")
 
+
+
+with open("iptv.txt", 'r', encoding='utf-8') as file:
 import eventlet
 eventlet.monkey_patch()
 
