@@ -45,7 +45,7 @@ def modify_urls(url):
 
 def is_url_accessible(url):
     try:
-        response = requests.get(url, timeout=3)          ###//////////////////
+        response = requests.get(url, timeout=1)          ###//////////////////
         if response.status_code == 200:
             return url
     except requests.exceptions.RequestException:
@@ -116,7 +116,7 @@ for url in urls:
         try:
             # 发送GET请求获取JSON文件，设置超时时间为0.5秒
             json_url = f"{url}"
-            response = requests.get(json_url, timeout=2)
+            response = requests.get(json_url, timeout=1)################################
             json_data = response.content.decode('utf-8')
             try:
                     # 按行分割数据
@@ -338,7 +338,7 @@ def worker():
 
 
 # 创建多个工作线程
-num_threads = 64
+num_threads = 128
 for _ in range(num_threads):
     t = threading.Thread(target=worker, daemon=True)
     # t = threading.Thread(target=worker, args=(event,len(channels)))  # 将工作线程设置为守护线程
