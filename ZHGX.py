@@ -5,6 +5,8 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import requests
 import re
+import eventlet
+
 ###urls城市根据自己所处地理位置修改
 urls = [
     "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJoZWJlaSI%3D",  # 河北
@@ -245,25 +247,8 @@ with open("iptv.txt", 'w', encoding='utf-8') as file:
         print(result)
 
 
-with open("iptv.txt", 'r', encoding="utf-8") as f:
-    lines = f.readlines()
-    before = len(lines)
-    lines = list(set(lines))
-    after = len(lines)
-lines.sort()
 
-with open('iptv.txt', 'w', encoding='UTF-8') as f:
-    for line in lines:          
-      f.write(line)
-print('处理完成：')
-print(f'处理前文件行数：{before}')
-print(f'处理后文件行数：{after}')
 
-for line in fileinput.input("iptv.txt", inplace=True):  #打开文件，并对其进行关键词原地替换                     ###########
-    line = line.replace("CHC电影", "影迷电影")                                                                         ###########                                                      ###########
-    print(line, end="")  #设置end=""，避免输出多余的换行符     
-
-import eventlet
 
 eventlet.monkey_patch()
 
