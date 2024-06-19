@@ -22,8 +22,7 @@ import fileinput
 urls = [
     "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODA4Ig%3D%3D",#808
     "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODAwOCI%3D",#8008
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODA4MSI%3D",#IPTV综合
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJTaGFhbnhpIg%3D%3D",#8081
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODA4MSI%3D",#8081
     "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODg4OCI%3D",#8888
     "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iOTk5OSI%3D",#9999
 ]
