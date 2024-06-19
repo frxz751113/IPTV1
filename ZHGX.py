@@ -255,17 +255,17 @@ print("频道列表文件iptv.txt获取完成！")
 
 
 with open("iptv.txt", 'r', encoding='utf-8') as file:
-import eventlet
-eventlet.monkey_patch()
+ import eventlet
+ eventlet.monkey_patch()
 
 # 线程安全的队列，用于存储下载任务
-task_queue = Queue()
+ task_queue = Queue()
 
 # 线程安全的列表，用于存储结果
-results = []
+ results = []
 
-channels = []
-error_channels = []
+ channels = []
+ error_channels = []
 # 从iptv.txt文件内提取其他频道进行检测并分组
 with open("iptv.txt", 'r', encoding='utf-8') as file:
     lines = file.readlines()
