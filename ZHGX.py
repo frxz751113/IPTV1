@@ -134,13 +134,13 @@ for url in urls:
     for url in valid_urls:
         try:
             # 发送GET请求获取JSON文件，设置超时时间为0.5秒
-                json_url = f"{url}"
-                response = requests.get(json_url, timeout=1)
-                json_data = response.content.decode('utf-8')
-                try:
+            json_url = f"{url}"
+            response = requests.get(json_url, timeout=1)
+            json_data = response.content.decode('utf-8')
+            try:
                     # 按行分割数据
-                    lines = json_data.split('\n')
-                    for line in lines:
+             lines = json_data.split('\n')
+             for line in lines:
                         line = line.strip()
                         if line:
                             name, channel_url = line.split(',')
