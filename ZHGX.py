@@ -53,7 +53,7 @@ def modify_urls(url):
     base_url = url[:ip_start_index]  # http:// or https://
     ip_address = url[ip_start_index:ip_end_index]
     port = url[ip_end_index:]
-    ip_end = "/iptv/live/1000.json?key=txiptv"
+    ip_end = "/ZHGXTV/Public/json/live_interface.txt"
     for i in range(1, 256):
         modified_ip = f"{ip_address[:-1]}{i}"
         modified_url = f"{base_url}{modified_ip}{port}{ip_end}"
@@ -134,32 +134,23 @@ for url in urls:
     for url in valid_urls:
         try:
             # 发送GET请求获取JSON文件，设置超时时间为0.5秒
-            ip_start_index = url.find("//") + 2
-            ip_dot_start = url.find(".") + 1
-            ip_index_second = url.find("/", ip_dot_start)
-            base_url = url[:ip_start_index]  # http:// or https://
-            ip_address = url[ip_start_index:ip_index_second]
-            url_x = f"{base_url}{ip_address}"
-
-            json_url = f"{url}"
-            response = requests.get(json_url, timeout=3)                        ####///////////////
-            json_data = response.json()
-
-            try:
-                # 解析JSON文件，获取name和url字段
-                for item in json_data['data']:
-                    if isinstance(item, dict):
-                        name = item.get('name')
-                        urlx = item.get('url')
-                        if ',' in urlx:
-                            urlx = f"aaaaaaaa"
-
-                        #if 'http' in urlx or 'udp' in urlx or 'rtp' in urlx:
-                        if 'http' in urlx:
-                          if 'udp' not in urlr and '171.108.239.77' not in urlr:
-                            urld = f"{urlx}"
-                        else:
-                            urld = f"{url_x}{urlx}"
+                json_url = f"{url}"
+                response = requests.get(json_url, timeout=1)
+                json_data = response.content.decode('utf-8')
+                try:
+                    # 按行分割数据
+                    lines = json_data.split('\n')
+                    for line in lines:
+                        line = line.strip()
+                        if line:
+                            name, channel_url = line.split(',')
+                            urls = channel_url.split('/', 3)
+                            url_data = json_url.split('/', 3)
+                            if len(urls) >= 4:
+                                urld = (f"{urls[0]}//{url_data[2]}/{urls[3]}")
+                            else:
+                                urld = (f"{urls[0]}//{url_data[2]}")
+                            print(f"{name},{urld}")
 
                         if name and urld:
                             name = name.replace("高清电影", "影迷电影")                            
