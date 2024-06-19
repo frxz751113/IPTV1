@@ -7,12 +7,8 @@ import requests
 import re
 ###urls城市根据自己所处地理位置修改
 urls = [
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJoZWJlaSI%3D",  # c河北
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODg4OCI%3D",#8888
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODA5MCI%3D",#8090
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODgi",#88
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODgi",#809
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0iVGFpJ2FuIg%3D%3D",#泰安
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJoZWJlaSI%3D",  # 河北
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgIHJlZ2lvbj0iR1VBTkdYSSBaSFVBTkdaVSI%3D",#广西
     
 ]
 
