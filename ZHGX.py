@@ -141,6 +141,9 @@ for url in urls:
                     # 按行分割数据
              lines = json_data.split('\n')
              for line in lines:
+                 ######################
+                 if 'udp' not in line:
+                 #########################
                         line = line.strip()
                         if line:
                             name, channel_url = line.split(',')
@@ -176,24 +179,6 @@ for url in urls:
                             name = name.replace("(", "")
                             name = name.replace(")", "")
                             name = name.replace("L", "")
-                            name = name.replace("002", "AA酒店MV")
-                            name = name.replace("测试002", "凤凰卫视")
-                            name = name.replace("测试003", "凤凰卫视")
-                            name = name.replace("测试004", "私人影院")
-                            name = name.replace("测试005", "私人影院")
-                            name = name.replace("测试006", "东森洋片")
-                            name = name.replace("测试007", "东森电影")
-                            name = name.replace("测试008", "AXN电影")
-                            name = name.replace("测试009", "好莱坞电影")
-                            name = name.replace("测试010", "龙祥电影")
-                            name = name.replace("莲花台", "凤凰香港")
-                            name = name.replace("测试014", "凤凰资讯")
-                            name = name.replace("测试015", "未知影视")
-                            name = name.replace("TV星河", "空")
-                            name = name.replace("305", "酒店影视1")
-                            name = name.replace("306", "酒店影视2")
-                            name = name.replace("307", "酒店影视3")
-                            name = name.replace("CMIPTV", "")
                             name = name.replace("cctv", "CCTV")
                             name = re.sub(r"CCTV(\d+)台", r"CCTV\1", name)
                             name = name.replace("CCTV1综合", "CCTV1")
@@ -262,7 +247,6 @@ for url in urls:
                             name = name.replace("影视剧", "影视")
                             name = name.replace("电视剧", "影视")
                             name = name.replace("奥运匹克", "")
-                            name = name.replace("星空卫视", "动物杂技")
                             results.append(f"{name},{urld}")
             except:
                 continue
