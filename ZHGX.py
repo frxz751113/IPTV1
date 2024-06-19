@@ -123,7 +123,7 @@ for url in urls:
              lines = json_data.split('\n')
              for line in lines:
                  ######################
-                 if 'udp' not in line:
+                 if 'udp' not in line and 'rtp' not in line:
                  #########################
                         line = line.strip()
                         if line:
