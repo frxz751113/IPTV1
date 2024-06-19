@@ -9,8 +9,8 @@ import eventlet
 
 ###urls城市根据自己所处地理位置修改
 urls = [
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJoZWJlaSI%3D",  # 河北
-    
+    “ https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODg4OCI%3D”，#8888​
+    “ https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODA5MCI%3D”，#8090
 ]
 
 def modify_urls(url):
