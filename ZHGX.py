@@ -20,8 +20,10 @@ import fileinput
 #"isShowLoginJs"智能KUTV管理
 
 urls = [
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcG9ydD0iODA4Ig%3D%3D",#808
-    "https://fofa.info/result?qbase64=IlpIR1hUViI%3D",#zhgx
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0iemhhbmppYW5nIg%3D%3D",#湛江
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0iaGFuZGFuIg%3D%3D",#邯郸
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0ieGknYW4i",#西安
+    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0iaGFyYmluIg%3D%3D",#哈尔滨
 ]
 def modify_urls(url):
     modified_urls = []
