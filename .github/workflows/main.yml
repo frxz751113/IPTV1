@@ -1,4 +1,5 @@
-name: itvlist
+
+name: 组播ip采集
 
 on:
   schedule:
@@ -6,11 +7,10 @@ on:
   workflow_dispatch:
     分支:
       - main
-
+      
 jobs:
   build:
     runs-on: ubuntu-latest
-    #runs-on: ubuntu-22.04@20240422.1.0
 
     steps:
       - name: Checkout code
@@ -19,20 +19,35 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.12.3'
+          python-version: 3.x
 
       - name: Install dependencies
-        run: pip install selenium==4.19.0 requests==2.31.0 futures==3.0.5 eventlet==0.36.1
+        run: pip install selenium requests futures eventlet
+      - name: Install dependencies
+        run: pip install opencv-python requests 
+      - name: Install dependencies
+        run: pip install Beautifulsoup4 requests 
+      - name: Install dependencies
+        run: pip install translate requests 
+      - name: Install dependencies
+        run: pip install ffmpy
+      - name: Install dependencies
+        run: pip install termcolor
+      - name: Install dependencies
+        run: pip install func_timeout
 
-      - name: Run itv_all
-        run: python ${{ github.workspace }}/itvall(ZHGXTV).py
         
-      - name: 提交更改
+      - name: Run iptv
+        run: python ${{ github.workspace }}/ZHGX.py
+         
+      - name: Commit results
         run: |
-          git config --local user.email "ssili@126.com"
-          git config --local user.name "ssili126"
-          git add .
-          git commit *.txt -m "Add generated file"
-          git commit *.m3u -m "Add generated file"
-          #git pull --rebase
-          git push -f
+            git config --local user.email "actions@github.com"
+            git config --local user.name "GitHub Action"
+            if [ -n "$(git status --porcelain)" ]; then
+            git add  *.txt #*.m3u
+            git commit -m "Automatic update"
+            git push
+            else
+              echo "No changes detected, skipping commit."
+            fi
