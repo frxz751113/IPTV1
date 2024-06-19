@@ -10,7 +10,6 @@ import eventlet
 ###urls城市根据自己所处地理位置修改
 urls = [
     "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJoZWJlaSI%3D",  # 河北
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgIHJlZ2lvbj0iR1VBTkdYSSBaSFVBTkdaVSI%3D",#广西
     
 ]
 
