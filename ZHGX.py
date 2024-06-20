@@ -292,7 +292,7 @@ def worker():
                 file_size = 0
                 start_time = time.time()
                 # 多获取的视频数据进行12秒钟限制
-                with eventlet.Timeout(5, False):
+                with eventlet.Timeout(8000, False):
                     for i in range(len(ts_lists)):
                         ts_url = channel_url_t + ts_lists[i]  # 拼接单个视频片段下载链接
                         response = requests.get(ts_url, stream=True, timeout=1)
@@ -302,13 +302,13 @@ def worker():
                         response.close()
                 end_time = time.time()
                 response_time = end_time - start_time
-                if response_time >=5:
+                if response_time >=500:
                     file_size = 0
                 download_speed = file_size / response_time / 1024
                 normalized_speed =download_speed / 1024  # 将速率从kB/s转换为MB/s
                 ts_url = channel_url_t + ts_lists[0]  # 拼接单个视频片段下载链接
                 if normalized_speed >= 1:
-                    if file_size >= 1:
+                    if file_size >= 10:
                         result = channel_name, channel_url, f"{normalized_speed:.3f} MB/s"
                         results.append(result)
                         numberx = (len(results) + len(error_channels)) / len(channels) * 100
