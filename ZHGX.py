@@ -242,6 +242,25 @@ for result in results:
         channel_name, channel_url = result.split(',')
         channels.append((channel_name, channel_url))
 
+with open("iptv.txt", 'w', encoding='utf-8') as file:
+    for result in results:
+        file.write(result + "\n")
+        print(result)
+print("频道列表文件iptv.txt获取完成！")
+with open("iptv.txt", 'r', encoding="utf-8") as f:
+    lines = f.readlines()
+    before = len(lines)
+    lines = list(set(lines))
+    after = len(lines)
+lines.sort()
+
+with open('iptv.txt', 'w', encoding='UTF-8') as f:
+    for line in lines:          
+      f.write(line)
+print('对列表进行去重处理:')
+print(f'处理前文件行数：{before}')
+print(f'处理后文件行数：{after}')
+
 import eventlet
 eventlet.monkey_patch()
 
