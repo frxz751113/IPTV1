@@ -1,5 +1,5 @@
 
-name: 组播ip采集
+name: 智慧光讯采集
 
 on:
   schedule:
@@ -39,7 +39,7 @@ jobs:
         run: pip install replace
         
       - name: Run iptv
-        run: python ${{ github.workspace }}/itv1080.py
+        run: python ${{ github.workspace }}/ZHGX.py
          
       - name: Commit results
         run: |
