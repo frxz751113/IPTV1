@@ -23,7 +23,6 @@ urls = [
     "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0iemhhbmppYW5nIg%3D%3D",#湛江
     "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0iaGFuZGFuIg%3D%3D",#邯郸
     "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0ieGknYW4i",#西安
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0iaGFyYmluIg%3D%3D",#哈尔滨
     "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJIZW5hbiI%3D",#河南
     "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJzaGFuZG9uZyI%3D",#山东
 ]
@@ -303,7 +302,7 @@ def worker():
             
 
             # 获取的视频数据进行5秒钟限制
-            with eventlet.Timeout(128, False):  #################////////////////////////////////
+            with eventlet.Timeout(256, False):  #################////////////////////////////////
                 start_time = time.time()
                 content = requests.get(ts_url).content
                 end_time = time.time()
