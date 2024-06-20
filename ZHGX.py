@@ -23,7 +23,6 @@ urls = [
     "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0iemhhbmppYW5nIg%3D%3D",#湛江
     "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0iaGFuZGFuIg%3D%3D",#邯郸
     "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0ieGknYW4i",#西安
-    "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgY2l0eT0iaGFyYmluIg%3D%3D",#哈尔滨
     "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJIZW5hbiI%3D",#河南
     "https://fofa.info/result?qbase64=IlpIR1hUViIgJiYgcmVnaW9uPSJzaGFuZG9uZyI%3D",#山东
 ]
@@ -288,7 +287,7 @@ def worker():
                 file_size = 0
                 start_time = time.time()
                 # 多获取的视频数据进行12秒钟限制
-                with eventlet.Timeout(12, False):
+                with eventlet.Timeout(300, False):
                     for i in range(len(ts_lists)):
                         ts_url = channel_url_t + ts_lists[i]  # 拼接单个视频片段下载链接
                         response = requests.get(ts_url, stream=True, timeout=1)
@@ -336,7 +335,7 @@ def worker():
 
 
 # 创建多个工作线程
-num_threads = 10
+num_threads = 64
 for _ in range(num_threads):
     t = threading.Thread(target=worker, daemon=True)  # 将工作线程设置为守护线程
     t.start()
