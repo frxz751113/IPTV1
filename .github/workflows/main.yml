@@ -39,7 +39,7 @@ jobs:
         run: pip install replace
         
       - name: Run iptv
-        run: python ${{ github.workspace }}/ZHGX.py
+        run: python ${{ github.workspace }}/itv_all(1080).py
          
       - name: Commit results
         run: |
